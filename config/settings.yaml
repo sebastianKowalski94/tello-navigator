@@ -1,0 +1,26 @@
+# Tello Navigator — configuration
+
+drone:
+  speed_cm_s: 30
+  takeoff_height_cm: 80
+  max_flight_time_sec: 600     # Hard limit: 10 minutes
+
+sensors:
+  front_trigger: 17
+  front_echo: 18
+  right_trigger: 27
+  right_echo: 22
+  obstacle_threshold_cm: 35    # Distance at which a wall is detected
+  max_turn_attempts: 3         # Max consecutive left turns before abort
+
+mapping:
+  cell_size_cm: 25             # Grid resolution
+  max_room_cm: 800             # Maximum room dimension (32x32 grid)
+  max_laps: 2                  # Stop after N full laps around the room
+                               # Right-hand rule traces walls
+                               
+
+paths:
+  save_dir: "/home/pi/tello_data"
+  log_file: "flight_log.json"
+  map_file: "final_map.png"
